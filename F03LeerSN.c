@@ -20,7 +20,7 @@ int LeerSN() {
 
         if (cOpcionSN != 'S' && cOpcionSN != 'N') {
 
-            printf("Error. Solo se permite S o N\n");
+            MensajeError(3);
 
         } else if (cOpcionSN == 'S') {
 
