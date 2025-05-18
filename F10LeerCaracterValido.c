@@ -16,10 +16,12 @@
 char LeerCaracterValido(const char *sConjuntoCaracteres) {
 
     char cCaracterValidar;
-
+    char sTexto[80];
+  
     while (1) {
-
-        printf("Ingrese un carácter (%s): ", sConjuntoCaracteres);
+      
+        sprintf(sTexto, "Ingrese un car%ccter (%s): ", 160, sConjuntoCaracteres);
+        Mensaje(sTexto, 18, 5); 
         scanf(" %c", &cCaracterValidar);
 
         fflush(stdin);
