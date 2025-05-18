@@ -59,11 +59,12 @@ int VerificarFlotante(char *sCadena) {
 float LeerFlotanteEnRango(float fLimiteInferior, float fLimiteSuperior){
 	
     float fNumeroValidar;
-    char sEntrada[20];
+    char sEntrada[50];
+    char sTexto[80];
 
     while (1) {
-
-        printf("Ingrese un n%cmero flotante entre ‘%.4f’ y ‘%.4f’: ", 163, fLimiteInferior, fLimiteSuperior);
+        sprintf(sTexto, "Ingrese un n%cmero flotante entre %.4f y %.4f: ", 163, fLimiteInferior, fLimiteSuperior);
+        Mensaje(sTexto, 18, 5);
         scanf("%s", sEntrada);
 
         if (VerificarFlotante(sEntrada)) {
