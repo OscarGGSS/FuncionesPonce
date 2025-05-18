@@ -16,7 +16,7 @@
 
         if (cCaracterValidar < cLimiteInferior || cCaracterValidar > cLimiteSuperior) {
 
-            printf("Error. Car%ccter fuera del rango.\n", 160, 160);
+            MensajeError(8);
 
         } else {
 
