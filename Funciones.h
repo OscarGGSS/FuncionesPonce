@@ -6,6 +6,15 @@
 #include <windows.h>
 #include "interfaz.h"
 
+//Prototipos
+void MensajeError(int);
+int LeerSN();
+char* ValidarCadena15();
+int VerificarFlotante(char *);
+float LeerFlotanteEnRango(float, float);
+char LeerCaracterEnRango(char, char);
+char LeerCaracterValido(char *);
+
 /* ******
 * F16CodigoDeError
 * 
