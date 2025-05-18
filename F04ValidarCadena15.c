@@ -19,14 +19,10 @@ char* ValidarCadena15() {
 
         eLongitudCadena = strlen(sCadena);
 
-        if (eLongitudCadena > 15) {
+        if (eLongitudCadena > 15 || eLongitudCadena < 15) {
 
-            printf("Error. La cadena es muy larga.\n");
-
-        } else if (eLongitudCadena < 15) {
-
-            printf("Error. La cadena es muy corta.\n");
-
+            MensajeError(4);
+            
         } else {
 
             eCadenaValida = 1;
@@ -44,7 +40,7 @@ char* ValidarCadena15() {
 
             if (!eCadenaValida) {
 
-                printf("Error. La cadena contiene caracteres no permitidos.\n");
+                MensajeError(10);
 
             } else {
 
