@@ -280,9 +280,6 @@ char LeerCaracterEnRango(char cLimiteInferior, char cLimiteSuperior) {
   * Autor: Zuri
 ****** */
 
-//¿Se debe validar el carácter antes?
-//¿Debe ser indiferente a mayusculas y minusculas (A == a)?
-
 char LeerCaracterValido(const char *sConjuntoCaracteres) {
 
     char cCaracterValidar;
