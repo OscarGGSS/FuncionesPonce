@@ -13,7 +13,7 @@ int LeerSN() {
 
     while (1) {
 
-        printf("Ingrese S o N: ");
+        Mensaje("Ingrese S o N: ", 18, 5);
         scanf(" %c", &cOpcionSN);
 
         cOpcionSN = toupper(cOpcionSN);
