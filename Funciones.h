@@ -13,7 +13,7 @@ char* ValidarCadena15();
 int VerificarFlotante(char *);
 float LeerFlotanteEnRango(float, float);
 char LeerCaracterEnRango(char, char);
-char LeerCaracterValido(char *);
+char LeerCaracterValido(const char *);
 
 /* ******
 * F16CodigoDeError
