@@ -30,7 +30,7 @@ char LeerCaracterValido(const char *sConjuntoCaracteres) {
       
         } else {
 
-            printf("Error. Car%ccter inv%clido.\n", 160, 160);
+            MensajeError(10);
       
         }
     }
