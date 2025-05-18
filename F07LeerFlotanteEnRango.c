@@ -29,7 +29,7 @@ int VerificarFlotante(char *sCadena) {
 
             if (ePuntoEncontrado) {
 
-                printf("Error.  El valor no es v%clido\n", 160);
+                MensajeError(11);
                 return 0;
             
             }
@@ -38,7 +38,7 @@ int VerificarFlotante(char *sCadena) {
        
         } else if (!isdigit(sCadena[eContador])) {
 
-            printf("Error. El valor no es v%clido\n", 160);
+            MensajeError(11);
             return 0;
 
         }
@@ -48,7 +48,7 @@ int VerificarFlotante(char *sCadena) {
 
     if (!ePuntoEncontrado) {
 		
-        printf("Error. El valor no es v%clido [Entero]\n", 160);
+        MensajeError(11);
         return 0;
     }
 
@@ -72,7 +72,7 @@ float LeerFlotanteEnRango(float fLimiteInferior, float fLimiteSuperior){
 
             if (fNumeroValidar < fLimiteInferior || fNumeroValidar > fLimiteSuperior) {
 
-                printf("Error. El n%cmero no est%c en el rango.\n", 163, 160);
+                MensajeError(6);
 
             } else {
 
