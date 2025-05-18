@@ -8,10 +8,12 @@
 
     char LeerCaracterEnRango(char cLimiteInferior, char cLimiteSuperior) {
     char cCaracterValidar;
-
+    char sTexto[80];
+	    
     while(1){
 
-        printf("Ingrese un car%ccter entre '%c' y '%c': ", 160, cLimiteInferior, cLimiteSuperior);
+        sprintf(sTexto, "Ingrese un car%ccter entre '%c' y '%c': ", 160, cLimiteInferior, cLimiteSuperior);
+        Mensaje(sTexto, 18, 5);
         scanf(" %c", &cCaracterValidar);
 
         if (cCaracterValidar < cLimiteInferior || cCaracterValidar > cLimiteSuperior) {
