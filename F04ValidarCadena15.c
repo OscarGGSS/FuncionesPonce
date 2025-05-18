@@ -14,7 +14,7 @@ char* ValidarCadena15() {
 
     while (1) {
 
-        printf("Ingrese una cadena de 15 caracteres: ");
+        Mensaje("Ingrese una cadena de 15 caracteres: ", 18, 5);
         gets(sCadena);
 
         eLongitudCadena = strlen(sCadena);
