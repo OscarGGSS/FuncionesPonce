@@ -54,7 +54,7 @@ void Centrar(char *sCadena , int eRenglon){
 void Mensaje(char *sTexto, int eRenglon, int eColumna){
 	
 	GoToXY( eColumna, eRenglon );
-	printf(sTexto);
+	printf("%s", sTexto);
 }
 
 	
