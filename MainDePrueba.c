@@ -16,6 +16,7 @@ int main(){
     char valido;
 
     //F03
+    system("cls");
     printf("¿Desea continuar?\n");
     
     if (LeerSN()) {
@@ -23,25 +24,34 @@ int main(){
     } else {
         printf("Elegiste N: Salir\n");
     }
+    system("pause");
 
-    /*
+    while (getchar() != '\n'); //Para limpiar el buffer, no sé me lo dió internet
+
     //F04
-    cadenaValida = ValidarCadena15();
-
-    printf("Cadena válida ingresada: %s\n", cadenaValida);
+    system("cls");
     
+    cadenaValida = ValidarCadena15();
+    printf("Cadena válida ingresada: %s\n", cadenaValida);
+    system("pause");
+
     //F07
+    system("cls");
     numero = LeerFlotanteEnRango(-9.0, 10.0);
     printf("Número ingresado correctamente: %.2f\n", numero);
-    
+    system("pause");
+
     //F08
+    system("cls");
     caracter = LeerCaracterEnRango('a', 'z');
     printf("Carácter válido ingresado: %c\n", caracter);
-    
+    system("pause");
+
     //F10
+    system("cls");
     valido = LeerCaracterValido("ABCS");
     printf("Carácter aceptado: %c\n", valido);
-*/
-    getchar();
+    system("pause");
+
     return 0;
 }
