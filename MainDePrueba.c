@@ -24,6 +24,7 @@ int main(){
         printf("Elegiste N: Salir\n");
     }
 
+    /*
     //F04
     cadenaValida = ValidarCadena15();
 
@@ -40,7 +41,7 @@ int main(){
     //F10
     valido = LeerCaracterValido("ABCS");
     printf("Carácter aceptado: %c\n", valido);
-
+*/
     getchar();
     return 0;
 }

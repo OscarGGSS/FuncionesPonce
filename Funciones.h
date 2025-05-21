@@ -89,7 +89,8 @@ int LeerSN() {
 
     while (1) {
 
-        Mensaje("Ingrese S o N: ", 18, 5);
+        Mensaje("Ingrese S o N: ", 15, 5);
+        GoToXY(5, 30);
         scanf(" %c", &cOpcionSN);
 
         cOpcionSN = toupper(cOpcionSN);
@@ -122,7 +123,8 @@ char* ValidarCadena15() {
 
     while (1) {
 
-        Mensaje("Ingrese una cadena de 15 caracteres: ", 18, 5);
+        Mensaje("Ingrese una cadena de 15 caracteres: ", 15, 7);
+        GoToXY(7, 30);
         gets(sCadena);
 
         eLongitudCadena = strlen(sCadena);
@@ -231,7 +233,8 @@ float LeerFlotanteEnRango(float fLimiteInferior, float fLimiteSuperior){
 
     while (1) {
         sprintf(sTexto, "Ingrese un n%cmero flotante entre %.4f y %.4f: ", 163, fLimiteInferior, fLimiteSuperior);
-        Mensaje(sTexto, 18, 5);
+        Mensaje(sTexto, 15, 8);
+        GoToXY(8, 30);
         scanf("%s", sEntrada);
 
         if (VerificarFlotante(sEntrada)) {
@@ -265,7 +268,8 @@ char LeerCaracterEnRango(char cLimiteInferior, char cLimiteSuperior) {
     while(1){
 
         sprintf(sTexto, "Ingrese un car%ccter entre '%c' y '%c': ", 160, cLimiteInferior, cLimiteSuperior);
-        Mensaje(sTexto, 18, 5);
+        Mensaje(sTexto, 15, 9);
+        GoToXY(9, 30);
         scanf(" %c", &cCaracterValidar);
 
         if (cCaracterValidar < cLimiteInferior || cCaracterValidar > cLimiteSuperior) {
@@ -296,7 +300,8 @@ char LeerCaracterValido(const char *sConjuntoCaracteres) {
     while (1) {
       
         sprintf(sTexto, "Ingrese un car%ccter (%s): ", 160, sConjuntoCaracteres);
-        Mensaje(sTexto, 18, 5); 
+        Mensaje(sTexto, 15, 11); 
+        GoToXY(11, 30);
         scanf(" %c", &cCaracterValidar);
 
         fflush(stdin);
