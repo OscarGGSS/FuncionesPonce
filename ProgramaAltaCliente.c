@@ -21,5 +21,6 @@ int main(){
 
     Centrar("Alta de Clientes", 3);
 
+    system("pause");
 }
 

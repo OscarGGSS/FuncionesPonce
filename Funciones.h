@@ -1,4 +1,4 @@
-//Alguien cambiele el nombre porfavor :c
+//Alguien cambiele el nombre porfavor :c xd
 //podemos quitar de aqui las bibliotecas???
 #include <stdio.h>
 #include <ctype.h>
@@ -7,13 +7,15 @@
 #include <windows.h>
 
 //Prototipos
-void MensajeError(int);
-int LeerSN();
-char* ValidarCadena15();
-int VerificarFlotante(char *);
-float LeerFlotanteEnRango(float, float);
-char LeerCaracterEnRango(char, char);
-char LeerCaracterValido(const char *);
+void MensajeError(int); //16
+int LeerSN(); //3
+char* ValidarCadena15(); //4
+int VerificarFlotante(char *); //Extra
+float LeerFlotanteEnRango(float, float); //7
+char LeerCaracterEnRango(char, char); //8
+char LeerCaracterValido(const char *); //10
+char* LeerCadenaConFormato(char *); //11
+char* ValidarCadena(char*, int); //Extra
 
 /* ******
 * F16CodigoDeError
@@ -486,5 +488,55 @@ void Conversion() {
         printf("Error al convertir el número.\n");
     }
 }
+
+
+/* *********
+   Programa: F19CadenaANumerico.c
+   Autor: Oscar
+   Fecha:
+   Objetivo:
+   Compilador: Dev-C++ 5.11
+   Version 1.0
+********* */
+
+
+
+// --- Prototipos ---
+char* leerCadena();
+double convertirCadenaANumero(const char*);
+void mostrarNumero(double);
+void ejecutarConversion();
+
+
+char* leerCadena() {
+    char* entrada = (char*)malloc(100 * sizeof(char)); 
+    if (entrada != NULL) {
+        printf("Ingresa un n%cmero (puede tener punto decimal): ", 163);
+        scanf("%99s", entrada); 
+    }
+    return entrada;
+}
+
+
+double convertirCadenaANumero(const char* cadena) {
+    return strtod(cadena, NULL); 
+}
+
+void mostrarNumero(double fNumero) {
+    printf("N%cmero convertido: %f\n", 163, fNumero);
+}
+
+void ejecutarConversion() {
+    char* cadena = leerCadena();
+    if (cadena != NULL) {
+        double numero = convertirCadenaANumero(cadena);
+        mostrarNumero(numero);
+        free(cadena); 
+    } else {
+        printf("Error al leer la cadena.\n");
+    }
+}
+
+
 
 
