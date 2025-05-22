@@ -3,6 +3,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <windows.h>
+#include <time.h>
 
 //Prototipos
 int LeerEntero(); //1
@@ -220,7 +221,7 @@ char* ValidarCadena15() {
 
         Mensaje("Ingrese una cadena de 15 caracteres: ", 15, 8);
         GoToXY(8, 52);
-        gets(sCadena);
+        fgets(sCadena, sizeof(sCadena), stdin);
 
         eLongitudCadena = strlen(sCadena);
 
@@ -271,7 +272,7 @@ char* ValidarCadena(char* sCadena, int eMaxLongitud) {
         
         Mensaje(sMensaje, 15, 8);
         GoToXY(8, 52);
-        gets(sCadena);
+        fgets(sCadena, sizeof(sCadena), stdin);
 
         eLongitudCadena = strlen(sCadena);
         
