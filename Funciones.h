@@ -7,17 +7,29 @@
 #include <windows.h>
 
 //Prototipos
-void MensajeError(int); //16
+//1
+//2
 int LeerSN(); //3
 char* ValidarCadena15(); //4
-int VerificarFlotante(char *); //Extra
+char* ValidarCadena(char*, int); //Extra
+//5
+//6
 float LeerFlotanteEnRango(float, float); //7
+int VerificarFlotante(char *); //Extra
 char LeerCaracterEnRango(char, char); //8
+//9
 char LeerCaracterValido(const char *); //10
 char* LeerCadenaConFormato(char *); //11
-char* ValidarCadena(char*, int); //Extra
-char* leerCadena();
-double convertirCadenaANumero(const char*);
+//12
+//13
+//14
+//15
+void MensajeError(int); //16
+//17
+//18
+char* leerCadena(); 
+double convertirCadenaANumero(const char*); //19
+//20
 void mostrarNumero(double);
 void ejecutarConversion();
 
