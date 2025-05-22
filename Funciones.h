@@ -14,6 +14,8 @@ int VerificarFlotante(char *);
 float LeerFlotanteEnRango(float, float);
 char LeerCaracterEnRango(char, char);
 char LeerCaracterValido(const char *);
+char* LeerCadenaConFormato(char *);
+char* ValidarCadena(char*, int);
 
 /* ******
 * F16CodigoDeError
