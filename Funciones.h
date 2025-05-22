@@ -1,4 +1,3 @@
-//Alguien cambiele el nombre porfavor :c xd
 //podemos quitar de aqui las bibliotecas???
 #include <stdio.h>
 #include <ctype.h>
@@ -20,7 +19,7 @@ char LeerCaracterEnRango(char, char); //8
 //9
 char LeerCaracterValido(const char *); //10
 char* LeerCadenaConFormato(char *); //11
- //12
+//12
 void Linea(int, int);
 void GoToXY(int, int);
 //13
@@ -101,13 +100,13 @@ void MensajeError(int eCodigoError) {
 ****** */
 
 /* ******
-* F03LeerSN
-* Función que permita leer sólo S o N y retorne verdadero si fue S o falso si fue N sólo hasta que sea S o N.
-* Autor: Zuri
+* Función 3: LeerSN
+* Autor: Zurisadai González de Santiago
 ****** */
 
 int LeerSN() {
 
+    //Variables
     char cOpcionSN;
 
     while (1) {
@@ -135,12 +134,13 @@ int LeerSN() {
 }
 
 /* ******
-* F04ValidarCadena
-* Función que permita leer cadenas sólo de 15 caracteres cualesquiera (números o letras, no más ni menos de 15) y retorne la cadena leída sólo hasta que sea correcta.
-* Autor: Zuri
+* Función 4: ValidarCadena15
+* Autor: Zurisadai González de Santiago
 ****** */
-char* ValidarCadena15() {
 
+char* ValidarCadena15() {
+    
+    //Variables
     static char sCadena[20];
     int eLongitudCadena, eContador, lCadenaValida;
 
@@ -183,7 +183,10 @@ char* ValidarCadena15() {
     }
 }
 
-//Validar cadena de cualquier número
+/* ******
+* Función: ValidarCadena
+* Autor: Zurisadai González de Santiago
+****** */
 char* ValidarCadena(char* sCadena, int eMaxLongitud) {
     
     int eLongitudCadena;
@@ -227,18 +230,13 @@ char* ValidarCadena(char* sCadena, int eMaxLongitud) {
 ****** */
 
 /* ******
-* F07LeerFlotanteEnRango
-* Función que permita leer un número flotante que pertenezca a un rango de valores flotantes pasado como parámetros 
-  (límite inferior y límite superior) y retorne el número leído sólo hasta que sea correcto.
-* Autor: Zuri
+* Función: VerificarFlotante
+* Autor: Zurisadai González de Santiago
 ****** */
 
-/* ******
-* La función "VerificarFlotante" no fue pedida en la tarea. Sin embargo, me pareció conveniente separar la validación 
-  (para saber si es float) de la verificación del rango (como se hace en la función 6 con el rango de enteros).
-****** */
 int VerificarFlotante(char *sCadena) {
 
+    //Variables
     int ePuntoEncontrado = 0;
     int eContador = 0;
 
@@ -278,9 +276,14 @@ int VerificarFlotante(char *sCadena) {
     return 1;
 }
 
+/* ******
+* Función 7: LeerFlotanteEnRango
+* Autor: Zurisadai González de Santiago
+****** */
 
 float LeerFlotanteEnRango(float fLimiteInferior, float fLimiteSuperior){
-	
+
+	//Variables
     float fNumeroValidar;
     char sEntrada[50];
     char sTexto[80];
@@ -309,13 +312,13 @@ float LeerFlotanteEnRango(float fLimiteInferior, float fLimiteSuperior){
 }
 
 /* ******
-* F08LeerCaracterEnRango
-* Función que permita leer un carácter que pertenezca a un rango de caracteres pasado como parámetros 
-  (límite inferior y límite superior) y retorne el carácter leído sólo hasta que sea correcto.
-* Autor: Zuri
+* Función 8: LeerCaracterEnRango
+* Autor: Zurisadai González de Santiago
 ****** */
 
 char LeerCaracterEnRango(char cLimiteInferior, char cLimiteSuperior) {
+    
+    //Variables
     char cCaracterValidar;
     char sTexto[80];
 	    
@@ -338,16 +341,13 @@ char LeerCaracterEnRango(char cLimiteInferior, char cLimiteSuperior) {
 }
 
 /* ******
-* F10LeerCaracterValido
-* Función que permita leer un carácter que pertenezca a un conjunto específico pasado como parámetro y 
-  regrese el carácter leído sólo hasta que sea correcto. El parámetro puede ser una cadena para admitir 
-  sólo alguna de las siguientes letras ABCS y si el usuario teclea B, ese será el carácter retornado, 
-  pero si teclea M volverá a pedir el carácter hasta que sea A, B, C o S.
-  * Autor: Zuri
+* Función 10: LeerCaracterValido
+* Autor: Zurisadai González de Santiago
 ****** */
 
 char LeerCaracterValido(const char *sConjuntoCaracteres) {
-
+    
+    //Variables
     char cCaracterValidar;
     char sTexto[80];
   
@@ -373,19 +373,20 @@ char LeerCaracterValido(const char *sConjuntoCaracteres) {
 }
 
 /* ******
-* F11LeerCadenaConFormato
-* Que permita leer un número determinado de caracteres con un formato pasado como parámetro y retorne la 
-  cadena leída sólo hasta que sea correcta, por ejemplo, un RFC, la función podría recibir como argumento la 
-  cadena “AAAA999999XXX” que indica que debe leer primero sólo cuatro caracteres alfabéticos, luego seis 
-  dígitos y por último tres caracteres cualesquiera.
-  * Autor: Zuri
+* Función 11: LeerCadenaConFormato
+* Autor: Zurisadai González de Santiago
  ****** */ 
+
 char *LeerCadenaConFormato(char *sFormato) {
+
+    //Variables
     static char sCadena[100];
-    int eLongitud = strlen(sFormato);
+    int eLongitud;
     int eContador;
-    int lCadenaValida;
+    int lCadenaValida; 
     
+    eLongitud = strlen(sFormato);
+
     while (1) {
         ValidarCadena(sCadena, eLongitud);
 
@@ -415,7 +416,7 @@ char *LeerCadenaConFormato(char *sFormato) {
 //12
 
 /* ******
-* FLinea
+* Función: Linea
  ****** */ 
 void Linea(int eColIni, int eColFin){
 	int eCol;
@@ -425,7 +426,7 @@ void Linea(int eColIni, int eColFin){
 }
 
 /* ******
-* FGoToXY
+* Función: GoToXY
 ****** */
 void GoToXY(int eRen, int eCol){
 	
@@ -441,9 +442,9 @@ void GoToXY(int eRen, int eCol){
 //13
 
 /* ******
-* F15Mensaje
-* 
+* Función 15: Mensaje
  ****** */ 
+
 void Mensaje(char *sTexto, int eRenglon, int eColumna){
 	
 	GoToXY( eColumna, eRenglon );
@@ -451,9 +452,9 @@ void Mensaje(char *sTexto, int eRenglon, int eColumna){
 }
 
 /* ******
-* F14Centrar
-* 
+* Función 14: Centrar
  ****** */ 
+
 void Centrar(char *sCadena , int eRenglon){
 	
 	Mensaje(sCadena , (100 - strlen(sCadena)) / 2, eRenglon);
