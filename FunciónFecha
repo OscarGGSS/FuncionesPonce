@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stdbool.h>
+
+bool esFechaValida(int dia, int mes, int anio) {
+    // Validar mes
+    if (mes < 1 || mes > 12) return false;
+
+    // Validar días según el mes
+    int diasPorMes[] = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+    
+    // Ajustar para años bisiestos
+    if (mes == 2) {
+        if ((anio % 4 == 0 && anio % 100 != 0) || (anio % 400 == 0)) {
+            diasPorMes[2] = 29;
+        }
+    }
+
+    return dia > 0 && dia <= diasPorMes[mes];
+}
+
+char* leerFecha() {
+    static char fecha[11];
+    int dia, mes, anio;
+
+    while (true) {
+        printf("Ingrese la fecha (dd/mm/aaaa): ");
+        scanf("%10s", fecha); 
+
+        // Extraer día, mes y año
+        sscanf(fecha, "%d/%d/%d", &dia, &mes, &anio);
+
+        // Validar la fecha
+        if (esFechaValida(dia, mes, anio)) {
+            return fecha; // Retornar la fecha válida
+        } else {
+            printf("Fecha inválida. Intente nuevamente.\n");
+        }
+    }
+}
+
