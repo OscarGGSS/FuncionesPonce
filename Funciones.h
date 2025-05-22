@@ -6,17 +6,17 @@
 #include <windows.h>
 
 //Prototipos
-//1
-//2
+int LeerEntero(); //1
+char* LeerCadenaAlfabetica(); //2
 int LeerSN(); //3
 char* ValidarCadena15(); //4
 char* ValidarCadena(char*, int); //Extra
-//5
-//6
+int LeerEnteroPositivo(); //5
+int LeerEnteroEnRango(int, int); //6
 float LeerFlotanteEnRango(float, float); //7
 int VerificarFlotante(char *); //Extra
 char LeerCaracterEnRango(char, char); //8
-//9
+char* RegresarCadenaMayusculas(); //9
 char LeerCaracterValido(const char *); //10
 char* LeerCadenaConFormato(char *); //11
 //12
@@ -222,16 +222,48 @@ char* ValidarCadena(char* sCadena, int eMaxLongitud) {
 }
 
 /* ******
-* F05
-* 
-* Autor: 
+* F05LeerEnteroPositivo
+* Función que permita leer sólo enteros (positivos o negativos) y retorne el entero 
+leído, sólo hasta que sea correcto. 
+* Autor: Soriano Aguilar José Ángel
 ****** */
 
+int LeerEnteroPositivo()
+{
+    int eEntero;
+    while (1)
+    {
+        eEntero = LeerEntero();
+        if (eEntero >= 0)
+        {
+            return eEntero;
+        }
+        else
+        {
+            printf("Error, introduce un numero entero positivo: ");
+        }
+    }
+}
+
 /* ******
-* F06
-* 
-* Autor: 
+* F06LeerEnteroEnRango
+* Función que  permita leer un entero que pertenezca a un rango de enteros pasado 
+como parámetros (límite inferior y límite superior) y retorne el entero leído 
+sólo hasta que sea correcto
+* Autor: Soriano Aguilar José Ángel
 ****** */
+
+int LeerEnteroEnRango(int eLimiteInferior, int eLimiteSuperior) {
+    int eValor;
+    while (1) {
+        eValor = LeerEntero();  
+        if (eValor < eLimiteInferior || eValor > eLimiteSuperior) {
+            printf("Error: el numero debe estar entre %d y %d.\n", eLimiteInferior, eLimiteSuperior);
+        } else {
+            return eValor;
+                }
+               }
+}
 
 /* ******
 * Función: VerificarFlotante
@@ -344,6 +376,22 @@ char LeerCaracterEnRango(char cLimiteInferior, char cLimiteSuperior) {
 	}
 }
 
+/* ******
+* Función 9: LeerCaracterValido
+* Autor: Soriano Aguilar José Ángel
+****** */
+char* RegresarCadenaMayusculas() {
+    char  *sCadena = LeerCadenaAlfabetica();
+    int i;
+    while (1) {
+       for (int i = 0; sCadena[i] != '\0'; i++)
+       {
+              sCadena[i] = toupper(sCadena[i]);
+       }
+       return sCadena;
+
+    }
+}
 /* ******
 * Función 10: LeerCaracterValido
 * Autor: Zurisadai González de Santiago
