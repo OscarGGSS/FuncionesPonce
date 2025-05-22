@@ -45,7 +45,7 @@ int leerEnteroEnRango(int eLimiteInferior, int eLimiteSuperior) {
 
 char* leerFecha() {
     static char cFecha[11]; // Formato "dd/mm/aaaa" + '\0'
-    int eDia, eMes, eAnio;
+    int dia, mes, anio;
 
     while (true) {
         printf("Ingrese la fecha (dd/mm/aaaa): ");
@@ -63,3 +63,8 @@ char* leerFecha() {
     }
 }
 
+int main() {
+    char* cFecha = leerFecha();
+    printf("Fecha ingresada: %s\n", cFecha);
+    return 0;
+}
