@@ -86,8 +86,9 @@ void MenuLecturas() {
                         system("cls");
                         int numero;
                         fflush(stdin);
+                        GoToXY(8,15);
                         numero = LeerEntero();
-                        Mensaje("Numero ingresado", 7, 7);
+                        Mensaje("Numero ingresado", 7, 9);
                         system("pause");
                         break;
             }
@@ -96,9 +97,10 @@ void MenuLecturas() {
                         system("cls");
                         char* cadena;
                         fflush(stdin);
+                        GoToXY(8,15);
                         Mensaje("Introduce una cadena alfabetica: ", 7,7);
                         cadena = LeerCadenaAlfabetica();
-                        Mensaje("Cadena ingresada", 8, 7);
+                        Mensaje("Cadena ingresada", 7, 9);
                         system("pause");
                         break;
             }
@@ -107,11 +109,12 @@ void MenuLecturas() {
                         system("cls");
                         int resultado;
                         fflush(stdin);
+                        GoToXY(8,15);
                         resultado = LeerSN();
                         if (resultado){
-                            Mensaje("Seleccionaste 'S'", 7, 7);
+                            Mensaje("Seleccionaste 'S'", 7, 15);
                         }else{
-                            Mensaje("Seleccionaste 'N'", 7, 7);
+                            Mensaje("Seleccionaste 'N'", 7, 16);
                         }
                             system("pause");
                         break;
@@ -121,8 +124,9 @@ void MenuLecturas() {
                         system("cls");
                         char* cadena;
                         fflush(stdin);
+                        GoToXY(8,15);
                         cadena = ValidarCadena15();
-                        Mensaje("Cadena valida ingresada", 7, 7);
+                        Mensaje("Cadena valida ingresada", 7, 9);
                         system("pause");
                         break;
             }
@@ -132,8 +136,9 @@ void MenuLecturas() {
                         int numero;
                         fflush(stdin);
                         Mensaje("Introduce un numero entero positivo: ", 7, 7);
+                        GoToXY(8,15);
                         numero = LeerEnteroPositivo();
-                        Mensaje("Numero ingresado", 8, 7);
+                        Mensaje("Numero ingresado", 7, 9);
                         system("pause");
                         break;
                 
@@ -145,7 +150,7 @@ void MenuLecturas() {
                         fflush(stdin);
                         Mensaje("Introduce el límite inferior: ", 7, 7);
                         scanf("%d", &minimo);
-                        Mensaje("Introduce el límite superior: ", 8, 7);
+                        Mensaje("Introduce el límite superior: ", 7, 8);
                         scanf("%d", &maximo);
 
                         if (minimo > maximo) {
@@ -155,7 +160,7 @@ void MenuLecturas() {
                         }
 
                         numero = LeerEnteroEnRango(minimo, maximo);
-                        Mensaje("Número ingresado", 10, 7);
+                        Mensaje("Número ingresado", 7, 10);
                         system("pause");
                         break;
                     }
@@ -166,7 +171,7 @@ void MenuLecturas() {
                         fflush(stdin);
                         Mensaje("Introduce el límite inferior: ", 7, 7);
                         scanf("%f", &minimo);
-                        Mensaje("Introduce el límite superior: ", 8, 7);
+                        Mensaje("Introduce el límite superior: ", 7, 8);
                         scanf("%f", &maximo);
 
                         if (minimo > maximo) {
@@ -176,7 +181,7 @@ void MenuLecturas() {
                         }
 
                         numero = LeerFlotanteEnRango(minimo, maximo);
-                        Mensaje("Número ingresado", 10, 7);
+                        Mensaje("Número ingresado", 7, 10);
                         system("pause");
                         break;
                     }
@@ -187,11 +192,11 @@ void MenuLecturas() {
                         fflush(stdin);
                         Mensaje("Introduce el límite inferior (carácter): ", 7, 7);
                         scanf(" %c", &minimo);
-                        Mensaje("Introduce el límite superior (carácter): ", 8, 7);
+                        Mensaje("Introduce el límite superior (carácter): ", 7, 8);
                         scanf(" %c", &maximo);
 
                         caracter = LeerCaracterEnRango(minimo, maximo);
-                        Mensaje("Carácter ingresado", 10, 7);
+                        Mensaje("Carácter ingresado", 7, 10);
                         system("pause");
                         break;
                         }
@@ -203,7 +208,7 @@ void MenuLecturas() {
                         gets(conjunto);
 
                         caracter = LeerCaracterValido(conjunto);
-                        Mensaje("Carácter ingresado: ", 9, 7);
+                        Mensaje("Carácter ingresado: ", 7, 9);
                         system("pause");
                         break;
             }
@@ -217,12 +222,13 @@ void MenuLecturas() {
                         gets(formato);
 
                         cadenaValida = LeerCadenaConFormato(formato);
-                        Mensaje("Cadena válida ingresada:", 8, 7);
+                        Mensaje("Cadena válida ingresada:", 7, 9);
                         system("pause");
                         break;
                     }
             case 11: system("cls");
                     Mensaje("Aqui va la fecha", 7, 7);
+                    system("pause");
                     break;
 
             case 12: 
