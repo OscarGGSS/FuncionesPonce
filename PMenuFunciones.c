@@ -45,10 +45,10 @@ int main() {
             case 5: AltaCliente(); 
                     break;
 
-            case 6: Mensaje("Saliendo del programa...", 7, 30); 
+            case 6: Mensaje("Saliendo del programa...", 25, 30); 
                     break;
 
-            default: Centrar("Opcion invalida", 35); 
+            default: Mensaje("Opcion invalida", 25, 30); 
                     system("pause");
                     break;
         }
