@@ -7,15 +7,15 @@
 #include <windows.h>
 
 //Prototipos
-void MensajeError(int);
-int LeerSN();
-char* ValidarCadena15();
-int VerificarFlotante(char *);
-float LeerFlotanteEnRango(float, float);
-char LeerCaracterEnRango(char, char);
-char LeerCaracterValido(const char *);
-char* LeerCadenaConFormato(char *);
-char* ValidarCadena(char*, int);
+void MensajeError(int); //16
+int LeerSN(); //3
+char* ValidarCadena15(); //4
+int VerificarFlotante(char *); //Extra
+float LeerFlotanteEnRango(float, float); //7
+char LeerCaracterEnRango(char, char); //8
+char LeerCaracterValido(const char *); //10
+char* LeerCadenaConFormato(char *); //11
+char* ValidarCadena(char*, int); //Extra
 
 /* ******
 * F16CodigoDeError
