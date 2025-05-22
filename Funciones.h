@@ -391,3 +391,102 @@ char *LeerCadenaConFormato(char *sFormato) {
         }
     }
 }
+
+
+/* *********
+   Programa: F17BorrarArea.c
+   Autor: Ricardo
+   Fecha: 19/05/2025
+   Objetivo: 
+   Compilador: Dev-C++ 5.11
+   Version 1.0
+********* */
+
+
+void borrarArea(int x1, int y1, int x2, int y2) {
+    // Validar que las coordenadas sean correctas
+    if (x1 < 0 || y1 < 0 || x2 < 0 || y2 < 0 || x1 > x2 || y1 > y2) {
+        printf("Coordenadas inválidas.\n");
+        return;
+    }
+
+    // Mover el cursor a la posición (x1, y1)
+    printf("\033[%d;%dH", y1, x1); 
+
+    // Borrar el área especificada
+    for (int i = y1; i <= y2; i++) {
+        printf("\033[%d;%dH", i, x1); // Mover el cursor a la fila i, columna x1
+        for (int j = x1; j <= x2; j++) {
+            printf(" "); // Imprimir espacios para borrar
+        }
+    }
+
+    // Regresar el cursor a la posición original
+    printf("\033[%d;%dH", y1, x1);
+}
+
+
+
+    // Borrar un área de 10x5 comenzando en (5, 2)
+    borrarArea(5, 2, 15, 6);
+
+    printf("Área borrada. Presione Enter para salir.\n");
+    getchar(); // Esperar a que el usuario presione Enter
+    return 0;
+}
+
+
+
+
+/* *********
+   Programa: F18NumericoACadena.c
+   Autor: Oscar
+   Fecha:
+   Objetivo:
+   Compilador: Dev-C++ 5.11
+   Version 1.0
+********* */
+
+
+// Prototipos 
+int LeerNumero();
+char* ConvertirNumeroCadena(int);
+void MostrarCadena(const char*);
+void Conversion();
+
+
+int LeerNumero() {
+    int eNumero;
+    printf("Ingresa un n%cmero entero: ", 163);
+    scanf("%d", &eNumero);
+    return eNumero;
+}
+
+
+char* ConvertirNumeroCadena(int eNumero) {
+    char* cCadena = (char*)malloc(12 * sizeof(char)); 
+    if (cCadena != NULL) {
+        sprintf(cCadena, "%d", eNumero);
+    }
+    return cCadena;
+}
+
+
+void MostrarCadena(const char* cCadena) {
+    printf("N%cmero como cadena: %s\n", 163, cCadena);
+}
+
+
+void Conversion() {
+    int eNumero = LeerNumero();
+    char* cCadena = ConvertirNumeroCadena(eNumero);
+
+    if (cCadena != NULL) {
+        MostrarCadena(cCadena);
+        free(cCadena); // Liberamos la memoria
+    } else {
+        printf("Error al convertir el número.\n");
+    }
+}
+
+

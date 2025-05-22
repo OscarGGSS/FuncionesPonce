@@ -1,6 +1,6 @@
 /* *********
    Programa: F18NumericoACadena.c
-   Autor:
+   Autor: Oscar
    Fecha:
    Objetivo:
    Compilador: Dev-C++ 5.11
@@ -11,20 +11,19 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// --- Prototipos de funciones ---
+// Prototipos 
 int LeerNumero();
 char* ConvertirNumeroCadena(int);
 void MostrarCadena(const char*);
 void Conversion();
 
+//Programa principal
+
 int main() {
-    Conversion(); // Solo ejecuta todo el flujo
+    Conversion(); 
     return 0;
 }
 
-// --- Implementación de funciones ---
-
-// Lee un número entero desde el teclado
 int LeerNumero() {
     int eNumero;
     printf("Ingresa un n%cmero entero: ", 163);
@@ -32,21 +31,21 @@ int LeerNumero() {
     return eNumero;
 }
 
-// Convierte un número entero a cadena de caracteres
+
 char* ConvertirNumeroCadena(int eNumero) {
-    char* cCadena = (char*)malloc(12 * sizeof(char)); // Para enteros de 32 bits
+    char* cCadena = (char*)malloc(12 * sizeof(char)); 
     if (cCadena != NULL) {
         sprintf(cCadena, "%d", eNumero);
     }
     return cCadena;
 }
 
-// Muestra una cadena por pantalla
+
 void MostrarCadena(const char* cCadena) {
     printf("N%cmero como cadena: %s\n", 163, cCadena);
 }
 
-// Ejecuta todo el flujo de conversión
+
 void Conversion() {
     int eNumero = LeerNumero();
     char* cCadena = ConvertirNumeroCadena(eNumero);
@@ -55,7 +54,7 @@ void Conversion() {
         MostrarCadena(cCadena);
         free(cCadena); // Liberamos la memoria
     } else {
-        printf("Error al convertir el número.\n");
+        printf("Error al convertir el nÃºmero.\n");
     }
 }
 
