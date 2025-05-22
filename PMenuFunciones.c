@@ -18,12 +18,24 @@ int main() {
         scanf("%d", &opcion);
 
         switch (opcion) {
-            case 1: MenuLecturas(); break;
-            case 2: MenuInterfaz(); break;
-            case 3: MenuConversion(); break;
-            case 4: MenuGenerarNumeros(); break;
-            case 5: MenuAltaCliente(); break;
-            case 6: printf("Saliendo del programa...\n"); break;
+            case 1: MenuLecturas(); 
+                    break;
+                    
+            case 2: MenuInterfaz(); 
+                    break;
+
+            case 3: MenuConversion(); 
+                    break;
+
+            case 4: MenuGenerarNumeros(); 
+                    break;
+
+            case 5: MenuAltaCliente(); 
+                    break;
+
+            case 6: printf("Saliendo del programa...\n"); 
+                    break;
+
             default: printf("Opcion invalida\n"); system("pause");
         }
 
@@ -58,50 +70,67 @@ void MenuLecturas() {
             case 1: 
             default: printf("Opcion invalida\n"); system("pause");
         }
-    } while (opcion != 8);
+    } while (opcion != 13);
 }
 
-void menuConversion() {
+void MenuConversion() {
     int opcion;
     do {
         system("cls");
-        printf("=== Conversion ===\n");
-        printf("1. Numero a cadena\n");
-        printf("2. Cadena a numero\n");
-        printf("3. Regresar al menu principal\n");
+        printf("Conversiones\n");
+        printf("1. Convertir cadena a mayusculas\n");
+        printf("2. Numero a cadena\n");
+        printf("3. Cadena a numero\n");
+        printf("4. Regresar al menu principal\n");
         printf("Seleccione una opcion: ");
         scanf("%d", &opcion);
 
         switch (opcion) {
-            case 1: Conversion(); break;
-            case 2: ejecutarConversion(); break;
-            case 3: printf("Regresando...\n"); break;
-            default: printf("Opcion invalida\n"); system("pause");
+            case 1:
         }
-    } while (opcion != 3);
+    } while (opcion != 4);
 }
 
-void menuGenerarNumeros() {
+void MenuGenerarNumeros() {
     int opcion;
     do {
         system("cls");
-        printf("=== Generar Numeros ===\n");
-        printf("1. Leer numero entero\n");
+        printf("Generar Numeros\n");
+        printf("1. Generar numero entero aleatorio\n");
         printf("2. Regresar al menu principal\n");
         printf("Seleccione una opcion: ");
         scanf("%d", &opcion);
 
         switch (opcion) {
-            case 1: LeerNumero(); break;
-            case 2: printf("Regresando...\n"); break;
+            case 1: 
             default: printf("Opcion invalida\n"); system("pause");
         }
     } while (opcion != 2);
 }
 
-void menuAltaCliente() {
+void MenuAltaCliente() {
     system("cls");
-    printf("=== Alta Cliente ===\n");
+    printf("Alta Cliente\n");
     printf("Esta seccion esta en construccion.\n");
     system("pause");
+}
+
+void MenuInterfaz() {
+    int opcion;
+    do {
+        system("cls");
+        printf("Interfaz\n");
+        printf("1. Mensaje en renglon\n");
+        printf("2. Mensaje centrado\n");
+        printf("3. Mensaje en renglon y columna\n");
+        printf("4. Borrar area en pantalla\n");
+        printf("5. Margen en área\n");
+        printf("Seleccione una opcion: ");
+        scanf("%d", &opcion);
+
+        switch (opcion) {
+            case 1: 
+            default: printf("Opcion invalida\n"); system("pause");
+        }
+    } while (opcion != 5);
 }
