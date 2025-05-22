@@ -99,15 +99,115 @@ void MenuLecturas() {
                             system("pause");
                         break;
                     }
-            
-            
 
+            case 4: {
+                        char* cadena;
+                        fflush(stdin);
+                        cadena = ValidarCadena15();
+                        printf("Cadena valida ingresada: %s\n", cadena);
+                        system("pause");
+                        break;
+            }
+
+            case 5: {
+                        int numero;
+                        fflush(stdin);
+                        printf("Introduce un numero entero positivo: ");
+                        numero = LeerEnteroPositivo();
+                        printf("Numero ingresado: %d\n", numero);
+                        system("pause");
+                        break;
+                
+            }
+
+            case 6: {
+                        int minimo, maximo, numero;
+                        fflush(stdin);
+                        printf("Introduce el límite inferior: ");
+                        scanf("%d", &minimo);
+                        printf("Introduce el límite superior: ");
+                        scanf("%d", &maximo);
+
+                        if (minimo > maximo) {
+                            int temp = minimo;
+                            minimo = maximo;
+                            maximo = temp;
+                        }
+
+                        numero = LeerEnteroEnRango(minimo, maximo);
+                        printf("Número ingresado: %d\n", numero);
+                        system("pause");
+                        break;
+                    }
+
+            case 7: {
+                        float minimo, maximo, numero;
+                        fflush(stdin);
+                        printf("Introduce el límite inferior: ");
+                        scanf("%f", &minimo);
+                        printf("Introduce el límite superior: ");
+                        scanf("%f", &maximo);
+
+                        if (minimo > maximo) {
+                            float temp = minimo;
+                            minimo = maximo;
+                            maximo = temp;
+                        }
+
+                        numero = LeerFlotanteEnRango(minimo, maximo);
+                        printf("Número ingresado: %.4f\n", numero);
+                        system("pause");
+                        break;
+                    }
             
- 
+            case 8: {
+                        char minimo, maximo, caracter;
+                        fflush(stdin);
+                        printf("Introduce el límite inferior (carácter): ");
+                        scanf(" %c", &minimo);
+                        printf("Introduce el límite superior (carácter): ");
+                        scanf(" %c", &maximo);
 
+                        caracter = LeerCaracterEnRango(minimo, maximo);
+                        printf("Carácter ingresado: %c\n", caracter);
+                        system("pause");
+                        break;
+                        }
+            case 9: {
+                        char conjunto[50], caracter;
+                        fflush(stdin);
+                        printf("Introduce el conjunto de caracteres válidos (por ejemplo: abc123): ");
+                        gets(conjunto);
 
-            default: printf("Opcion invalida\n"); system("pause");
+                        caracter = LeerCaracterValido(conjunto);
+                        printf("Carácter ingresado: %c\n", caracter);
+                        system("pause");
+                        break;
+            }
+
+            case 10: {
+                        char formato[50];
+                        char *cadenaValida;
+                        fflush(stdin);
+                        printf("Introduce el formato (A=letra, 9=dígito, X=alfanumérico): ");
+                        gets(formato);
+
+                        cadenaValida = LeerCadenaConFormato(formato);
+                        printf("Cadena válida ingresada: %s\n", cadenaValida);
+                        system("pause");
+                        break;
+                    }
+            case 11: printf("Aqui va la fecha");
+
+            case 12: 
+                        break;
+
+            default: 
+                        printf("Opcion invalida\n"); 
+                        system("pause");
+                        break;
         }
+    
     } while (opcion != 12);
 }
 
@@ -133,6 +233,10 @@ void MenuInterfaz() {
 
 void MenuConversion() {
     int opcion;
+    char* sCadena = NULL;
+    int eNumero;
+    double numero;
+
     do {
         system("cls");
         printf("Conversiones\n");
@@ -142,9 +246,47 @@ void MenuConversion() {
         printf("4. Regresar al menu principal\n");
         printf("Seleccione una opcion: ");
         scanf("%d", &opcion);
+        fflush(stdin);
 
         switch (opcion) {
             case 1:
+                system("cls");
+                printf("Convertir cadena a mayusculas :\n");
+                sCadena = RegresarCadenaMayusculas();
+                printf("Cadena en mayusculas: %s\n", sCadena);
+                free(sCadena);
+                system("pause");
+                break;
+
+            case 2:
+                system("cls");
+                printf("Numero a cadena\n");
+                eNumero = LeerNumero();
+                sCadena = ConvertirNumeroCadena(eNumero);
+                printf("Cadena resultante: %s\n", sCadena);
+                free(sCadena);
+                system("pause");
+                break;
+
+            case 3:
+                system("cls");
+                printf("Cadena a numero\n");
+                sCadena = leerCadena();
+                if (sCadena != NULL) {
+                    numero = convertirCadenaANumero(sCadena);
+                    mostrarNumero(numero);
+                    free(sCadena);
+                }
+                system("pause");
+                break;
+
+            case 4:
+                break;
+
+            default:
+                printf("Opcion invalida\n");
+                system("pause");
+                break;
         }
     } while (opcion != 4);
 }
@@ -160,7 +302,10 @@ void MenuGenerarNumeros() {
         scanf("%d", &opcion);
 
         switch (opcion) {
-            case 1: 
+            case 1: printf("hola");
+                    break;
+            case 2: 
+                    break;
             default: printf("Opcion invalida\n"); system("pause");
         }
     } while (opcion != 2);

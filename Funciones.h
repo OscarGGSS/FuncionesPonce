@@ -446,7 +446,7 @@ char LeerCaracterEnRango(char cLimiteInferior, char cLimiteSuperior) {
 }
 
 /* ******
-* Función 9: LeerCaracterValido
+* Función 9: 
 * Función que permita leer cadenas sólo de caracteres alfabéticos, que los convierta 
 en mayúsculas y retorne la cadena en mayúsculas sólo hasta que sea 
 correcta
