@@ -1,4 +1,3 @@
-//podemos quitar de aqui las bibliotecas???
 #include <stdio.h>
 #include <ctype.h>
 #include <string.h>
@@ -446,7 +445,7 @@ char LeerCaracterEnRango(char cLimiteInferior, char cLimiteSuperior) {
 }
 
 /* ******
-* Función 9: 
+* Función 9: LeerCaracterValido
 * Función que permita leer cadenas sólo de caracteres alfabéticos, que los convierta 
 en mayúsculas y retorne la cadena en mayúsculas sólo hasta que sea 
 correcta
