@@ -3,36 +3,36 @@
 #include <string.h>
 #include <stdbool.h>
 
-bool esFechaValida(int dia, int mes, int anio) {
+bool esFechaValida(int eDia, int eMes, int eAnio) {
     // Validar mes
-    if (mes < 1 || mes > 12) return false;
+    if (eMes < 1 || eMes > 12) return false;
 
     // Validar días según el mes
-    int diasPorMes[] = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+    int eDiasPorMes[] = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
     
     // Ajustar para años bisiestos
-    if (mes == 2) {
-        if ((anio % 4 == 0 && anio % 100 != 0) || (anio % 400 == 0)) {
-            diasPorMes[2] = 29;
+    if (eMes == 2) {
+        if ((eAnio % 4 == 0 && eAnio % 100 != 0) || (eAnio % 400 == 0)) {
+            eDiasPorMes[2] = 29;
         }
     }
 
-    return dia > 0 && dia <= diasPorMes[mes];
+    return eDia > 0 && eDia <= eDiasPorMes[eMes];
 }
 
-char* leerFecha() {
-    static char fecha[11];
-    int dia, mes, anio;
+char* cLeerFecha() {
+    static char cFecha[11];
+    int eDia, eMes, eAnio;
 
     while (true) {
         printf("Ingrese la fecha (dd/mm/aaaa): ");
-        scanf("%10s", fecha); 
+        scanf("%10s", eFecha); 
 
         // Extraer día, mes y año
-        sscanf(fecha, "%d/%d/%d", &dia, &mes, &anio);
+        sscanf(eFecha, "%d/%d/%d", &eDia, &eMes, &eAnio);
 
         // Validar la fecha
-        if (esFechaValida(dia, mes, anio)) {
+        if (esFechaValida(eDia, eMes, eAnio)) {
             return fecha; // Retornar la fecha válida
         } else {
             printf("Fecha inválida. Intente nuevamente.\n");
