@@ -1,3 +1,13 @@
+/* ******
+* Programa: PAltaCliente.c
+* Equipo: Infosauridos
+* Autores: Zurisadai G, Oscar G, Jose Ángel S. Ricardo T.
+* Fecha: 21/05/2025
+* Objetivo: 
+* Compilador:
+* Versión: 
+****** */
+
 //Bibliotecas
 #include <stdio.h>
 #include <ctype.h>
