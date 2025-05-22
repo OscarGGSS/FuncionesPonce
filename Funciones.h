@@ -92,17 +92,86 @@ void MensajeError(int eCodigoError) {
 }
 
 /* ******
-* F01
-* 
-* Autor:
+* F01LeerEntero
+* Función que permita leer sólo enteros (positivos o negativos) y retorne el entero 
+leído, sólo hasta que sea correcto. 
+* Autor:Soriano Aguilar José Ángel
 ****** */
+
+int LeerEntero()
+{
+    char sEntero[10];
+    int eEntero, longitud, e = 0, eEsEntero;
+    
+    while (1)
+    {
+        printf("Introduce un numero entero: ");
+        fgets(sEntero, sizeof(sEntero), stdin);
+        
+        sEntero[strcspn(sEntero, "\n")] = '\0';  
+
+        longitud = strlen(sEntero);
+        
+        if (sEntero[0] == '-' || sEntero[0] == '+')
+        {
+            e = 1;
+        }
+        else
+        {
+            e = 0;
+        }
+        eEsEntero = 1;
+        while (e < longitud)
+        {
+            if (!(isdigit(sEntero[e])))
+            {
+                eEsEntero = 0;
+                e = longitud;
+            }           
+            e++;
+        }
+        if (eEsEntero == 1)
+        {
+            eEntero = atoi(sEntero);
+            return eEntero;
+        }
+        else{
+            printf("Error, introduce un numero entero: ");
+        }
+        
+        
+        
+    }
+}
 
 /* ******
-* F02
-* 
-* Autor: 
+* F02LeerCadenaAlfabetica
+* Función que permita leer cadenas sólo de caracteres alfabéticos y retorne la 
+cadena leída sólo hasta que sea correcta. 
+* Autor: Soriano Aguilar José Ángel
 ****** */
 
+char* LeerCadenaAlfabetica() {
+    static char sCadena[50];
+    int eValido, i;
+
+    do {
+        eValido = 1;
+        fgets(sCadena, sizeof(sCadena), stdin);
+
+        sCadena[strcspn(sCadena, "\n")] = '\0';
+
+        for (i = 0; sCadena[i] != '\0'; i++) {
+            if (!isalpha(sCadena[i])) {
+                eValido = 0;
+                printf("Error: la cadena solo debe contener letras.\n");
+                break;
+            }
+        }
+    } while (!eValido);
+
+    return sCadena;
+}
 /* ******
 * Función 3: LeerSN
 * Autor: Zurisadai González de Santiago
@@ -378,6 +447,9 @@ char LeerCaracterEnRango(char cLimiteInferior, char cLimiteSuperior) {
 
 /* ******
 * Función 9: LeerCaracterValido
+* Función que permita leer cadenas sólo de caracteres alfabéticos, que los convierta 
+en mayúsculas y retorne la cadena en mayúsculas sólo hasta que sea 
+correcta
 * Autor: Soriano Aguilar José Ángel
 ****** */
 char* RegresarCadenaMayusculas() {
@@ -655,4 +727,21 @@ void Marco(){
 	printf("%c",192);
 	Linea (2,115);
  	printf("%c\n",217);
+}
+
+/* ******
+* Función 22: F22GenerarNumeroAleatorio
+* Función  Que genere un número entero aleatorio entre 0 y un valor especificado 
+como parámetro y retorne el número generado sólo hasta que sea correcto .
+* Autor: Soriano Aguilar José Ángel
+ ****** */
+
+ int GenerarNumeroAleatorio(int limiteSuperior) {
+    int numero;
+
+    do {
+        numero = rand() % (limiteSuperior + 1); // entre 0 y limiteSuperior
+    } while (numero != LeerEnteroEnRango(0, limiteSuperior)); // Confirmación del usuario
+
+    return numero;
 }
