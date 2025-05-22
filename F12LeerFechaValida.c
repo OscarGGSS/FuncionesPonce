@@ -8,7 +8,7 @@
    Compilador: Dev-C++ 5.11
    Version 1.0
 ********* */
-#include <stdio.h>https://github.com/OscarGGSS/FuncionesPonce/tree/main
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <stdbool.h>
@@ -30,23 +30,41 @@ bool esFechaValida(int eDia, int eMes, int eAnio) {
     return eDia > 0 && eDia <= eDiasPorMes[eMes];
 }
 
-char* cLeerFecha() {
-    static char cFecha[11];
-    int eDia, eMes, eAnio;
+int leerEnteroEnRango(int eLimiteInferior, int eLimiteSuperior) {
+    int eValor;
+    while (1) {
+        printf("Ingrese un número entre %d y %d: ", eLimiteInferior, eLimiteSuperior);
+        scanf("%d", &eValor);
+        if (eValor < eLimiteInferior || eValor > eLimiteSuperior) {
+            printf("Error: el número debe estar entre %d y %d.\n", eLimiteInferior, eLimiteSuperior);
+        } else {
+            return eValor;
+        }
+    }
+}
+
+char* leerFecha() {
+    static char cFecha[11]; // Formato "dd/mm/aaaa" + '\0'
+    int dia, mes, anio;
 
     while (true) {
         printf("Ingrese la fecha (dd/mm/aaaa): ");
-        scanf("%10s", eFecha); 
+        scanf("%10s", cFecha); // Leer hasta 10 caracteres
 
         // Extraer día, mes y año
-        sscanf(eFecha, "%d/%d/%d", &eDia, &eMes, &eAnio);
+        sscanf(cFecha, "%d/%d/%d", &eDia, &eMes, &eAnio);
 
-        // Validar la fecha
+        // Validar el día y mes usando la función leerEnteroEnRango
         if (esFechaValida(eDia, eMes, eAnio)) {
-            return fecha; // Retornar la fecha válida
+            return cFecha; // Retornar la fecha válida
         } else {
             printf("Fecha inválida. Intente nuevamente.\n");
         }
     }
 }
 
+int main() {
+    char* cFecha = leerFecha();
+    printf("Fecha ingresada: %s\n", cFecha);
+    return 0;
+}
