@@ -6,17 +6,17 @@
 #include <windows.h>
 
 //Prototipos
-//1
-//2
+int LeerEntero(); //1
+char* LeerCadenaAlfabetica(); //2
 int LeerSN(); //3
 char* ValidarCadena15(); //4
 char* ValidarCadena(char*, int); //Extra
-//5
-//6
+int LeerEnteroPositivo(); //5
+int LeerEnteroEnRango(int, int); //6
 float LeerFlotanteEnRango(float, float); //7
 int VerificarFlotante(char *); //Extra
 char LeerCaracterEnRango(char, char); //8
-//9
+char* RegresarCadenaMayusculas(); //9
 char LeerCaracterValido(const char *); //10
 char* LeerCadenaConFormato(char *); //11
 //12
@@ -38,7 +38,7 @@ void mostrarNumero(double);
 void ejecutarConversion(); //19
 //20
 void Marco(); //21
-//22
+int GenerarNumeroAleatorio(int); //22 
 
 /* ******
 * F16CodigoDeError
@@ -92,17 +92,86 @@ void MensajeError(int eCodigoError) {
 }
 
 /* ******
-* F01
-* 
-* Autor:
+* F01LeerEntero
+* Función que permita leer sólo enteros (positivos o negativos) y retorne el entero 
+leído, sólo hasta que sea correcto. 
+* Autor:Soriano Aguilar José Ángel
 ****** */
+
+int LeerEntero()
+{
+    char sEntero[10];
+    int eEntero, longitud, e = 0, eEsEntero;
+    
+    while (1)
+    {
+        printf("Introduce un numero entero: ");
+        fgets(sEntero, sizeof(sEntero), stdin);
+        
+        sEntero[strcspn(sEntero, "\n")] = '\0';  
+
+        longitud = strlen(sEntero);
+        
+        if (sEntero[0] == '-' || sEntero[0] == '+')
+        {
+            e = 1;
+        }
+        else
+        {
+            e = 0;
+        }
+        eEsEntero = 1;
+        while (e < longitud)
+        {
+            if (!(isdigit(sEntero[e])))
+            {
+                eEsEntero = 0;
+                e = longitud;
+            }           
+            e++;
+        }
+        if (eEsEntero == 1)
+        {
+            eEntero = atoi(sEntero);
+            return eEntero;
+        }
+        else{
+            printf("Error, introduce un numero entero: ");
+        }
+        
+        
+        
+    }
+}
 
 /* ******
-* F02
-* 
-* Autor: 
+* F02LeerCadenaAlfabetica
+* Función que permita leer cadenas sólo de caracteres alfabéticos y retorne la 
+cadena leída sólo hasta que sea correcta. 
+* Autor: Soriano Aguilar José Ángel
 ****** */
 
+char* LeerCadenaAlfabetica() {
+    static char sCadena[50];
+    int eValido, i;
+
+    do {
+        eValido = 1;
+        fgets(sCadena, sizeof(sCadena), stdin);
+
+        sCadena[strcspn(sCadena, "\n")] = '\0';
+
+        for (i = 0; sCadena[i] != '\0'; i++) {
+            if (!isalpha(sCadena[i])) {
+                eValido = 0;
+                printf("Error: la cadena solo debe contener letras.\n");
+                break;
+            }
+        }
+    } while (!eValido);
+
+    return sCadena;
+}
 /* ******
 * Función 3: LeerSN
 * Autor: Zurisadai González de Santiago
@@ -222,16 +291,48 @@ char* ValidarCadena(char* sCadena, int eMaxLongitud) {
 }
 
 /* ******
-* F05
-* 
-* Autor: 
+* F05LeerEnteroPositivo
+* Función que permita leer sólo enteros (positivos o negativos) y retorne el entero 
+leído, sólo hasta que sea correcto. 
+* Autor: Soriano Aguilar José Ángel
 ****** */
 
+int LeerEnteroPositivo()
+{
+    int eEntero;
+    while (1)
+    {
+        eEntero = LeerEntero();
+        if (eEntero >= 0)
+        {
+            return eEntero;
+        }
+        else
+        {
+            printf("Error, introduce un numero entero positivo: ");
+        }
+    }
+}
+
 /* ******
-* F06
-* 
-* Autor: 
+* F06LeerEnteroEnRango
+* Función que  permita leer un entero que pertenezca a un rango de enteros pasado 
+como parámetros (límite inferior y límite superior) y retorne el entero leído 
+sólo hasta que sea correcto
+* Autor: Soriano Aguilar José Ángel
 ****** */
+
+int LeerEnteroEnRango(int eLimiteInferior, int eLimiteSuperior) {
+    int eValor;
+    while (1) {
+        eValor = LeerEntero();  
+        if (eValor < eLimiteInferior || eValor > eLimiteSuperior) {
+            printf("Error: el numero debe estar entre %d y %d.\n", eLimiteInferior, eLimiteSuperior);
+        } else {
+            return eValor;
+                }
+               }
+}
 
 /* ******
 * Función: VerificarFlotante
@@ -344,6 +445,25 @@ char LeerCaracterEnRango(char cLimiteInferior, char cLimiteSuperior) {
 	}
 }
 
+/* ******
+* Función 9: LeerCaracterValido
+* Función que permita leer cadenas sólo de caracteres alfabéticos, que los convierta 
+en mayúsculas y retorne la cadena en mayúsculas sólo hasta que sea 
+correcta
+* Autor: Soriano Aguilar José Ángel
+****** */
+char* RegresarCadenaMayusculas() {
+    char  *sCadena = LeerCadenaAlfabetica();
+    int i;
+    while (1) {
+       for (int i = 0; sCadena[i] != '\0'; i++)
+       {
+              sCadena[i] = toupper(sCadena[i]);
+       }
+       return sCadena;
+
+    }
+}
 /* ******
 * Función 10: LeerCaracterValido
 * Autor: Zurisadai González de Santiago
@@ -607,4 +727,21 @@ void Marco(){
 	printf("%c",192);
 	Linea (2,115);
  	printf("%c\n",217);
+}
+
+/* ******
+* Función 22: F22GenerarNumeroAleatorio
+* Función  Que genere un número entero aleatorio entre 0 y un valor especificado 
+como parámetro y retorne el número generado sólo hasta que sea correcto .
+* Autor: Soriano Aguilar José Ángel
+ ****** */
+
+ int GenerarNumeroAleatorio(int eLimiteSuperior) {
+    int eNumero;
+
+    do {
+        eNumero = rand() % (eLimiteSuperior + 1); // entre 0 y limiteSuperior
+    } while (eNumero != LeerEnteroEnRango(0, eLimiteSuperior)); // Confirmación del usuario
+
+    return eNumero;
 }
