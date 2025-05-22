@@ -13,7 +13,7 @@ int main() {
     
     Marco();
 
-    int opcion;
+    int eOpcion;
 
     do {
         system("cls");
@@ -24,10 +24,11 @@ int main() {
         Mensaje("4. Generar numeros", 7, 10);
         Mensaje("5. Alta cliente", 7, 11);
         Mensaje("6. Salir", 7, 12);
-        Mensaje("Seleccione una opcion: ", 7, 20);
-        scanf("%d", &opcion);
+        Mensaje("Seleccione una Opcion: ", 7, 25);
+        GoToXY(25, 30);
+        scanf("%d", &eOpcion);
 
-        switch (opcion) {
+        switch (eOpcion) {
             
             case 1: MenuLecturas(); 
                     break;
@@ -44,14 +45,15 @@ int main() {
             case 5: AltaCliente(); 
                     break;
 
-            case 6: Mensaje("Saliendo del programa...", 25, 7); 
+            case 6: Mensaje("Saliendo del programa...", 7, 30); 
                     break;
 
-            default: Mensaje("Opcion invalida", 30, 30); 
+            default: Centrar("Opcion invalida", 35); 
                     system("pause");
+                    break;
         }
 
-    } while (opcion != 6);
+    } while (eOpcion != 6);
     
     system("pause");
     return 0;
@@ -59,26 +61,26 @@ int main() {
 
 //Funciones
 void MenuLecturas() {
-    int opcion;
+    int eOpcion;
     do {
         system("cls");
         Mensaje("Lecturas", 7, 7);
-        Mensaje("1. Leer entero", 8, 7);
-        Mensaje("2. Leer cadena", 9, 7);
-        Mensaje("3. Leer S o N", 10, 7);
-        Mensaje("4. Validar cadena de 15 caracteres", 11, 7);
-        Mensaje("5. Leer positivos", 12, 7);
-        Mensaje("6. Leer entero en rango",13, 7);
-        Mensaje("7. Leer flotante en rango", 14, 7);
-        Mensaje("8. Leer caracter en rango", 15, 7);
-        Mensaje("9. Leer caracter de un conjunto", 16, 7);
-        Mensaje("10. Leer cadena con formato", 17, 7);
-        Mensaje("11. Leer fecha", 18, 7);
-        Mensaje("12. Regresar al menu principal", 19, 7);
-        Mensaje("Seleccione una opcion: ", 20, 7);
-        scanf("%d", &opcion);
+        Mensaje("1. Leer entero", 7, 8);
+        Mensaje("2. Leer cadena", 7, 9);
+        Mensaje("3. Leer S o N", 7, 10);
+        Mensaje("4. Validar cadena de 15 caracteres", 7, 11);
+        Mensaje("5. Leer positivos", 7, 12);
+        Mensaje("6. Leer entero en rango", 7, 13);
+        Mensaje("7. Leer flotante en rango", 7, 14);
+        Mensaje("8. Leer caracter en rango", 7, 15);
+        Mensaje("9. Leer caracter de un conjunto", 7, 16);
+        Mensaje("10. Leer cadena con formato", 7, 17);
+        Mensaje("11. Leer fecha", 7, 18);
+        Mensaje("12. Regresar al menu principal", 7, 19);
+        Mensaje("Seleccione una Opcion: ", 7, 20);
+        scanf("%d", &eOpcion);
 
-        switch (opcion) {
+        switch (eOpcion) {
             
             case 1: {
                         system("cls");
@@ -227,16 +229,16 @@ void MenuLecturas() {
                         break;
 
             default: 
-                        Mensaje("Opcion invalida", 7, 7); 
+                        Mensaje("eOpcion invalida", 7, 7); 
                         system("pause");
                         break;
         }
     
-    } while (opcion != 12);
+    } while (eOpcion != 12);
 }
 
 void MenuInterfaz() {
-    int opcion;
+    int eOpcion;
     do {
         system("cls");
         Centrar("Interfaz", 3);
@@ -245,18 +247,18 @@ void MenuInterfaz() {
         Mensaje("3. Mensaje en renglon y columna", 9, 7);
         Mensaje("4. Borrar area en pantalla", 10, 7);
         Mensaje("5. Margen en área", 11, 7);
-        Mensaje("Seleccione una opcion: ", 12, 7);
-        scanf("%d", &opcion);
+        Mensaje("Seleccione una eOpcion: ", 12, 7);
+        scanf("%d", &eOpcion);
 
-        switch (opcion) {
+        switch (eOpcion) {
             case 1: 
-            default: Mensaje("Opcion invalida", 15, 7); system("pause");
+            default: Mensaje("eOpcion invalida", 15, 7); system("pause");
         }
-    } while (opcion != 5);
+    } while (eOpcion != 5);
 }
 
 void MenuConversion() {
-    int opcion;
+    int eOpcion;
     char* sCadena = NULL;
     int eNumero;
     double numero;
@@ -268,11 +270,11 @@ void MenuConversion() {
         Mensaje("2. Numero a cadena", 8, 7);
         Mensaje("3. Cadena a numero", 9, 7);
         Mensaje("4. Regresar al menu principal", 10, 7);
-        Mensaje("Seleccione una opcion: ", 11, 7);
-        scanf("%d", &opcion);
+        Mensaje("Seleccione una eOpcion: ", 11, 7);
+        scanf("%d", &eOpcion);
         fflush(stdin);
 
-        switch (opcion) {
+        switch (eOpcion) {
             case 1:
                 system("cls");
                 Mensaje("Convertir cadena a mayusculas :", 7, 7);
@@ -308,31 +310,31 @@ void MenuConversion() {
                 break;
 
             default:
-                Mensaje("Opcion invalida", 10, 7);
+                Mensaje("eOpcion invalida", 10, 7);
                 system("pause");
                 break;
         }
-    } while (opcion != 4);
+    } while (eOpcion != 4);
 }
 
 void MenuGenerarNumeros() {
-    int opcion;
+    int eOpcion;
     do {
         system("cls");
         Centrar("Generar Numeros", 3);
         Mensaje("1. Generar numero entero aleatorio", 7, 7);
         Mensaje("2. Regresar al menu principal", 8, 7);
-        Mensaje("Seleccione una opcion: ", 9, 7);
-        scanf("%d", &opcion);
+        Mensaje("Seleccione una eOpcion: ", 9, 7);
+        scanf("%d", &eOpcion);
 
-        switch (opcion) {
+        switch (eOpcion) {
             case 1: Mensaje("hola", 7, 7);
                     break;
             case 2: 
                     break;
-            default: Mensaje("Opcion invalida", 15, 7); system("pause");
+            default: Mensaje("eOpcion invalida", 15, 7); system("pause");
         }
-    } while (opcion != 2);
+    } while (eOpcion != 2);
 }
 
 void AltaCliente() {
