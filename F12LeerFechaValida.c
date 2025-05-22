@@ -63,8 +63,3 @@ char* leerFecha() {
     }
 }
 
-int main() {
-    char* cFecha = leerFecha();
-    printf("Fecha ingresada: %s\n", cFecha);
-    return 0;
-}
