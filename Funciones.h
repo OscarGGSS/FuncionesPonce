@@ -222,7 +222,7 @@ char* ValidarCadena15() {
 
         Mensaje("Ingrese una cadena de 15 caracteres: ", 15, 8);
         GoToXY(8, 52);
-        gets(sCadena);
+        fgets(sCadena, sizeof(sCadena), stdin);
 
         eLongitudCadena = strlen(sCadena);
 
@@ -273,7 +273,7 @@ char* ValidarCadena(char* sCadena, int eMaxLongitud) {
         
         Mensaje(sMensaje, 15, 8);
         GoToXY(8, 52);
-        gets(sCadena);
+        fgets(sCadena, sizeof(sCadena), stdin);
 
         eLongitudCadena = strlen(sCadena);
         

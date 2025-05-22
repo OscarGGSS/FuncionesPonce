@@ -198,7 +198,7 @@ void MenuLecturas() {
                         char conjunto[50], caracter;
                         fflush(stdin);
                         Mensaje("Introduce el conjunto de caracteres válidos (por ejemplo: abc123): ", 7, 7);
-                        gets(conjunto);
+                        fgets(conjunto, sizeof(conjunto), stdin);
 
                         caracter = LeerCaracterValido(conjunto);
                         Mensaje("Carácter ingresado: ", 9, 7);
@@ -212,7 +212,7 @@ void MenuLecturas() {
                         char *cadenaValida;
                         fflush(stdin);
                         Mensaje("Introduce el formato (A=letra, 9=dígito, X=alfanumérico): ", 7, 7);
-                        gets(formato);
+                        fgets(formato, sizeof(formato), stdin);
 
                         cadenaValida = LeerCadenaConFormato(formato);
                         Mensaje("Cadena válida ingresada:", 8, 7);
