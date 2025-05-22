@@ -16,6 +16,10 @@ int main(){
 
     //Variables
 
-    
+    Marco();
+    //Margen(2, 5, 10, 40); no se si asi se va allamar la funcion
+
+    Centrar("Alta de Clientes", 3);
+
 }
 
