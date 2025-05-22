@@ -2,7 +2,9 @@
    Programa: F17BorrarArea.c
    Autor: Ricardo
    Fecha: 19/05/2025
-   Objetivo: 
+   Objetivo: Función que borre un área de la pantalla especificando cuatro parámetros que
+   indiquen la esquina superior izquierda y la esquina inferior derecha (4
+   parámetros).
    Compilador: Dev-C++ 5.11
    Version 1.0
 ********* */
