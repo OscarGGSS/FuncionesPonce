@@ -20,8 +20,10 @@ char LeerCaracterEnRango(char, char); //8
 //9
 char LeerCaracterValido(const char *); //10
 char* LeerCadenaConFormato(char *); //11
-//12
- //13
+ //12
+void Linea(int, int);
+void GoToXY(int, int);
+//13
 void Centrar(char *, int); //14
 void Mensaje(char *, int, int); //15
 void MensajeError(int); //16
@@ -410,6 +412,53 @@ char *LeerCadenaConFormato(char *sFormato) {
     }
 }
 
+//12
+
+/* ******
+* FLinea
+ ****** */ 
+void Linea(int eColIni, int eColFin){
+	int eCol;
+	for(eCol = eColIni; eCol <= eColFin; eCol++){
+		printf("%c",196);
+ 	}
+}
+
+/* ******
+* FGoToXY
+****** */
+void GoToXY(int eRen, int eCol){
+	
+	COORD coordenada;
+	HANDLE salida = GetStdHandle(STD_OUTPUT_HANDLE);
+	
+	coordenada.X = eCol;
+	coordenada.Y = eRen;
+	
+	SetConsoleCursorPosition(salida, coordenada);
+}
+
+//13
+
+/* ******
+* F15Mensaje
+* 
+ ****** */ 
+void Mensaje(char *sTexto, int eRenglon, int eColumna){
+	
+	GoToXY( eColumna, eRenglon );
+	printf("%s", sTexto);
+}
+
+/* ******
+* F14Centrar
+* 
+ ****** */ 
+void Centrar(char *sCadena , int eRenglon){
+	
+	Mensaje(sCadena , (100 - strlen(sCadena)) / 2, eRenglon);
+	
+}
 
 /* *********
    Programa: F17BorrarArea.c
