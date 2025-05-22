@@ -2,7 +2,9 @@
    Programa: F12LeerFechaValida.c
    Autor: Ricardo
    Fecha: 20/05/2025
-   Objetivo:
+   Objetivo: Función que permita leer una fecha correctamente (dd/mm/aaaa) y la retorne sólo
+   hasta que sea correcta (debe validar que al menos el día y el mes sean
+   correctos) (reutilizar la función 6).
    Compilador: Dev-C++ 5.11
    Version 1.0
 ********* */
