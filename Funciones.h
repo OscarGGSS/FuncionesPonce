@@ -21,17 +21,19 @@ char LeerCaracterEnRango(char, char); //8
 char LeerCaracterValido(const char *); //10
 char* LeerCadenaConFormato(char *); //11
 //12
-//13
-//14
-//15
+ //13
+void Centrar(char *, int); //14
+void Mensaje(char *, int, int); //15
 void MensajeError(int); //16
 //17
 //18
 char* leerCadena(); 
-double convertirCadenaANumero(const char*); //19
-//20
+double convertirCadenaANumero(const char*);
 void mostrarNumero(double);
 void ejecutarConversion();
+//20
+void Marco(); //21
+//22
 
 /* ******
 * F16CodigoDeError
