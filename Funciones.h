@@ -16,6 +16,10 @@ char LeerCaracterEnRango(char, char); //8
 char LeerCaracterValido(const char *); //10
 char* LeerCadenaConFormato(char *); //11
 char* ValidarCadena(char*, int); //Extra
+char* leerCadena();
+double convertirCadenaANumero(const char*);
+void mostrarNumero(double);
+void ejecutarConversion();
 
 /* ******
 * F16CodigoDeError
@@ -427,17 +431,6 @@ void borrarArea(int x1, int y1, int x2, int y2) {
 
 
 
-    // Borrar un área de 10x5 comenzando en (5, 2)
-    borrarArea(5, 2, 15, 6);
-
-    printf("Área borrada. Presione Enter para salir.\n");
-    getchar(); // Esperar a que el usuario presione Enter
-    return 0;
-}
-
-
-
-
 /* *********
    Programa: F18NumericoACadena.c
    Autor: Oscar
@@ -498,15 +491,6 @@ void Conversion() {
    Compilador: Dev-C++ 5.11
    Version 1.0
 ********* */
-
-
-
-// --- Prototipos ---
-char* leerCadena();
-double convertirCadenaANumero(const char*);
-void mostrarNumero(double);
-void ejecutarConversion();
-
 
 char* leerCadena() {
     char* entrada = (char*)malloc(100 * sizeof(char)); 
