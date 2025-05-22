@@ -1,4 +1,5 @@
 //Alguien cambiele el nombre porfavor :c
+//podemos quitar de aqui las bibliotecas???
 #include <stdio.h>
 #include <ctype.h>
 #include <string.h>
@@ -119,7 +120,7 @@ int LeerSN() {
 char* ValidarCadena15() {
 
     static char sCadena[20];
-    int eLongitudCadena, eContador, eCadenaValida;
+    int eLongitudCadena, eContador, lCadenaValida;
 
     while (1) {
 
@@ -135,20 +136,20 @@ char* ValidarCadena15() {
             
         } else {
 
-            eCadenaValida = 1;
+            lCadenaValida = 1;
             eContador = 0;
 
             while(sCadena[eContador] != '\0') {
 
                 if (!isalnum(sCadena[eContador])) {
 
-                    eCadenaValida = 0;
+                    lCadenaValida = 0;
                 }
 
                 eContador++;
             }
 
-            if (!eCadenaValida) {
+            if (!lCadenaValida) {
 
                 MensajeError(10);
 
@@ -158,6 +159,37 @@ char* ValidarCadena15() {
             }
         }
     }
+}
+
+//Validar cadena de cualquier número
+char* ValidarCadena(char* sCadena, int eMaxLongitud) {
+    
+    int eLongitudCadena;
+    int lCadenaValida = 0;
+    char sMensaje[50];
+    
+    sprintf(sMensaje, "Ingrese una cadena de %d caracteres: ", eMaxLongitud);
+    
+    while (lCadenaValida == 0) {
+        
+        Mensaje(sMensaje, 15, 8);
+        GoToXY(8, 52);
+        gets(sCadena);
+
+        eLongitudCadena = strlen(sCadena);
+        
+        if (eLongitudCadena != eMaxLongitud) {
+         
+            MensajeError(4);
+        
+        } else {
+            
+            lCadenaValida = 1;
+        
+        }
+    }
+
+    return sCadena;
 }
 
 /* ******

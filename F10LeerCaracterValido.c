@@ -16,7 +16,7 @@
 char LeerCaracterValido(const char *sConjuntoCaracteres) {
 
     char cCaracterValidar;
-    char sTexto[80];
+    char sTexto[50];
   
     while (1) {
       
