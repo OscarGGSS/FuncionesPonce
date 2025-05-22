@@ -1,4 +1,4 @@
-//Alguien cambiele el nombre porfavor :c
+//Alguien cambiele el nombre porfavor :c xd
 //podemos quitar de aqui las bibliotecas???
 #include <stdio.h>
 #include <ctype.h>
