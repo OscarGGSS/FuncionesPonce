@@ -197,11 +197,11 @@ void MenuLecturas() {
                         system("cls");
                         char conjunto[50], caracter;
                         fflush(stdin);
-                        Mensaje("Introduce el conjunto de caracteres válidos (por ejemplo: abc123): ");
+                        Mensaje("Introduce el conjunto de caracteres válidos (por ejemplo: abc123): ", 7, 7);
                         gets(conjunto);
 
                         caracter = LeerCaracterValido(conjunto);
-                        Mensaje("Carácter ingresado: %c\n", caracter);
+                        Mensaje("Carácter ingresado: ", 9, 7);
                         system("pause");
                         break;
             }
@@ -211,23 +211,23 @@ void MenuLecturas() {
                         char formato[50];
                         char *cadenaValida;
                         fflush(stdin);
-                        Mensaje("Introduce el formato (A=letra, 9=dígito, X=alfanumérico): ");
+                        Mensaje("Introduce el formato (A=letra, 9=dígito, X=alfanumérico): ", 7, 7);
                         gets(formato);
 
                         cadenaValida = LeerCadenaConFormato(formato);
-                        Mensaje("Cadena válida ingresada: %s\n", cadenaValida);
+                        Mensaje("Cadena válida ingresada:", 8, 7);
                         system("pause");
                         break;
                     }
             case 11: system("cls");
-                    Mensaje("Aqui va la fecha");
+                    Mensaje("Aqui va la fecha", 7, 7);
                     break;
 
             case 12: 
                         break;
 
             default: 
-                        Mensaje("Opcion invalida\n"); 
+                        Mensaje("Opcion invalida", 7, 7); 
                         system("pause");
                         break;
         }
@@ -239,18 +239,18 @@ void MenuInterfaz() {
     int opcion;
     do {
         system("cls");
-        Mensaje("Interfaz\n");
-        Mensaje("1. Mensaje en renglon\n");
-        Mensaje("2. Mensaje centrado\n");
-        Mensaje("3. Mensaje en renglon y columna\n");
-        Mensaje("4. Borrar area en pantalla\n");
-        Mensaje("5. Margen en área\n");
-        Mensaje("Seleccione una opcion: ");
+        Centrar("Interfaz", 3);
+        Mensaje("1. Mensaje en renglon", 7, 7);
+        Mensaje("2. Mensaje centrado", 8, 7);
+        Mensaje("3. Mensaje en renglon y columna", 9, 7);
+        Mensaje("4. Borrar area en pantalla", 10, 7);
+        Mensaje("5. Margen en área", 11, 7);
+        Mensaje("Seleccione una opcion: ", 12, 7);
         scanf("%d", &opcion);
 
         switch (opcion) {
             case 1: 
-            default: Mensaje("Opcion invalida\n"); system("pause");
+            default: Mensaje("Opcion invalida", 15, 7); system("pause");
         }
     } while (opcion != 5);
 }
@@ -263,38 +263,38 @@ void MenuConversion() {
 
     do {
         system("cls");
-        Mensaje("Conversiones\n");
-        Mensaje("1. Convertir cadena a mayusculas\n");
-        Mensaje("2. Numero a cadena\n");
-        Mensaje("3. Cadena a numero\n");
-        Mensaje("4. Regresar al menu principal\n");
-        Mensaje("Seleccione una opcion: ");
+        Centrar("Conversiones", 3);
+        Mensaje("1. Convertir cadena a mayusculas", 7, 7);
+        Mensaje("2. Numero a cadena", 8, 7);
+        Mensaje("3. Cadena a numero", 9, 7);
+        Mensaje("4. Regresar al menu principal", 10, 7);
+        Mensaje("Seleccione una opcion: ", 11, 7);
         scanf("%d", &opcion);
         fflush(stdin);
 
         switch (opcion) {
             case 1:
                 system("cls");
-                Mensaje("Convertir cadena a mayusculas :\n");
+                Mensaje("Convertir cadena a mayusculas :", 7, 7);
                 sCadena = RegresarCadenaMayusculas();
-                Mensaje("Cadena en mayusculas: %s\n", sCadena);
+                Mensaje("Cadena en mayusculas (falta sprint aqui): ", 9, 7);
                 free(sCadena);
                 system("pause");
                 break;
 
             case 2:
                 system("cls");
-                Mensaje("Numero a cadena\n");
+                Mensaje("Numero a cadena", 7, 7);
                 eNumero = LeerNumero();
                 sCadena = ConvertirNumeroCadena(eNumero);
-                Mensaje("Cadena resultante: %s\n", sCadena);
+                Mensaje("Cadena resultante(falta sprint)", 7, 7);
                 free(sCadena);
                 system("pause");
                 break;
 
             case 3:
                 system("cls");
-                Mensaje("Cadena a numero\n");
+                Mensaje("Cadena a numero", 7, 7);
                 sCadena = leerCadena();
                 if (sCadena != NULL) {
                     numero = convertirCadenaANumero(sCadena);
@@ -308,7 +308,7 @@ void MenuConversion() {
                 break;
 
             default:
-                Mensaje("Opcion invalida\n");
+                Mensaje("Opcion invalida", 10, 7);
                 system("pause");
                 break;
         }
@@ -319,25 +319,25 @@ void MenuGenerarNumeros() {
     int opcion;
     do {
         system("cls");
-        Mensaje("Generar Numeros\n");
-        Mensaje("1. Generar numero entero aleatorio\n");
-        Mensaje("2. Regresar al menu principal\n");
-        Mensaje("Seleccione una opcion: ");
+        Centrar("Generar Numeros", 3);
+        Mensaje("1. Generar numero entero aleatorio", 7, 7);
+        Mensaje("2. Regresar al menu principal", 8, 7);
+        Mensaje("Seleccione una opcion: ", 9, 7);
         scanf("%d", &opcion);
 
         switch (opcion) {
-            case 1: Mensaje("hola");
+            case 1: Mensaje("hola", 7, 7);
                     break;
             case 2: 
                     break;
-            default: Mensaje("Opcion invalida\n"); system("pause");
+            default: Mensaje("Opcion invalida", 15, 7); system("pause");
         }
     } while (opcion != 2);
 }
 
 void AltaCliente() {
     system("cls");
-    Mensaje("Alta Cliente\n");
-    Mensaje("Esta seccion esta en construccion.\n");
+    Centrar("Alta Cliente", 3);
+    Mensaje("Esta seccion esta en construccion", 7, 7);
     system("pause");
 }
