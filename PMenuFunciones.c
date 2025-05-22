@@ -1,6 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "Funciones.h"
+
+void MenuLecturas();
+void MenuInterfaz();
+void MenuConversion();
+void MenuGenerarNumeros();
+void AltaCliente();
 
 int main() {
     
@@ -31,7 +38,7 @@ int main() {
             case 4: MenuGenerarNumeros(); 
                     break;
 
-            case 5: MenuAltaCliente(); 
+            case 5: AltaCliente(); 
                     break;
 
             case 6: printf("Saliendo del programa...\n"); 
@@ -41,7 +48,8 @@ int main() {
         }
 
     } while (opcion != 6);
-
+    
+    system("pause");
     return 0;
 }
 
@@ -69,6 +77,7 @@ void MenuLecturas() {
         switch (opcion) {
             
             case 1: {
+                        system("cls");
                         int numero;
                         fflush(stdin);
                         numero = LeerEntero();
@@ -78,6 +87,7 @@ void MenuLecturas() {
             }
 
             case 2: {
+                        system("cls");
                         char* cadena;
                         fflush(stdin);
                         printf("Introduce una cadena alfabetica: ");
@@ -88,6 +98,7 @@ void MenuLecturas() {
             }
 
             case 3: {
+                        system("cls");
                         int resultado;
                         fflush(stdin);
                         resultado = LeerSN();
@@ -101,6 +112,7 @@ void MenuLecturas() {
                     }
 
             case 4: {
+                        system("cls");
                         char* cadena;
                         fflush(stdin);
                         cadena = ValidarCadena15();
@@ -110,6 +122,7 @@ void MenuLecturas() {
             }
 
             case 5: {
+                        system("cls");
                         int numero;
                         fflush(stdin);
                         printf("Introduce un numero entero positivo: ");
@@ -121,6 +134,7 @@ void MenuLecturas() {
             }
 
             case 6: {
+                        system("cls");
                         int minimo, maximo, numero;
                         fflush(stdin);
                         printf("Introduce el límite inferior: ");
@@ -141,6 +155,7 @@ void MenuLecturas() {
                     }
 
             case 7: {
+                        system("cls");
                         float minimo, maximo, numero;
                         fflush(stdin);
                         printf("Introduce el límite inferior: ");
@@ -161,6 +176,7 @@ void MenuLecturas() {
                     }
             
             case 8: {
+                        system("cls");
                         char minimo, maximo, caracter;
                         fflush(stdin);
                         printf("Introduce el límite inferior (carácter): ");
@@ -174,6 +190,7 @@ void MenuLecturas() {
                         break;
                         }
             case 9: {
+                        system("cls");
                         char conjunto[50], caracter;
                         fflush(stdin);
                         printf("Introduce el conjunto de caracteres válidos (por ejemplo: abc123): ");
@@ -186,6 +203,7 @@ void MenuLecturas() {
             }
 
             case 10: {
+                        system("cls");
                         char formato[50];
                         char *cadenaValida;
                         fflush(stdin);
@@ -197,7 +215,9 @@ void MenuLecturas() {
                         system("pause");
                         break;
                     }
-            case 11: printf("Aqui va la fecha");
+            case 11: system("cls");
+                    printf("Aqui va la fecha");
+                    break;
 
             case 12: 
                         break;
@@ -311,7 +331,7 @@ void MenuGenerarNumeros() {
     } while (opcion != 2);
 }
 
-void MenuAltaCliente() {
+void AltaCliente() {
     system("cls");
     printf("Alta Cliente\n");
     printf("Esta seccion esta en construccion.\n");
