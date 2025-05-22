@@ -19,12 +19,12 @@ int main() {
         system("cls");
         Centrar("MENU PRINCIPAL", 3);
         Mensaje("1. Lecturas", 7, 7);
-        Mensaje("2. Interfaz de usuario", 8, 7);
-        Mensaje("3. Conversion", 9 , 7);
-        Mensaje("4. Generar numeros", 10, 7);
-        Mensaje("5. Alta cliente", 11, 7);
-        Mensaje("6. Salir", 12, 7);
-        Mensaje("Seleccione una opcion: ", 13, 7);
+        Mensaje("2. Interfaz de usuario", 7, 8);
+        Mensaje("3. Conversion", 7 , 9);
+        Mensaje("4. Generar numeros", 7, 10);
+        Mensaje("5. Alta cliente", 7, 11);
+        Mensaje("6. Salir", 7, 12);
+        Mensaje("Seleccione una opcion: ", 7, 20);
         scanf("%d", &opcion);
 
         switch (opcion) {
@@ -47,7 +47,7 @@ int main() {
             case 6: Mensaje("Saliendo del programa...", 25, 7); 
                     break;
 
-            default: Mensaje("Opcion invalida", 25, 7); 
+            default: Mensaje("Opcion invalida", 30, 30); 
                     system("pause");
         }
 
