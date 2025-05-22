@@ -1,6 +1,6 @@
 /******
-* Función que permita leer sólo enteros (positivos o negativos) y retorne el entero 
-leído, sólo hasta que sea correcto. 
+* Función que permita leer cadenas sólo de caracteres alfabéticos y retorne la 
+cadena leída sólo hasta que sea correcta. 
 * Autor: Angel
 *******/
 
@@ -8,27 +8,26 @@ leído, sólo hasta que sea correcto.
 #include <ctype.h>
 #include <string.h>
 
-char* leerCadenaAlfabetica() {
-    static char cadena[100];
-    int valida, i;
+char* LeerCadenaAlfabetica() {
+    static char sCadena[50];
+    int eValido, i;
 
     do {
-        valida = 1;
-        fgets(cadena, sizeof(cadena), stdin);
+        eValido = 1;
+        fgets(sCadena, sizeof(sCadena), stdin);
 
-        // Eliminar salto de línea si lo hay
-        cadena[strcspn(cadena, "\n")] = '\0';
+        sCadena[strcspn(sCadena, "\n")] = '\0';
 
-        for (i = 0; cadena[i] != '\0'; i++) {
-            if (!isalpha(cadena[i])) {
-                valida = 0;
+        for (i = 0; sCadena[i] != '\0'; i++) {
+            if (!isalpha(sCadena[i])) {
+                eValido = 0;
                 printf("Error: la cadena solo debe contener letras.\n");
                 break;
             }
         }
-    } while (!valida);
+    } while (!eValido);
 
-    return cadena;
+    return sCadena;
 }
 
 int main() {

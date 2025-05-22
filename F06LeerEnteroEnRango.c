@@ -9,13 +9,13 @@ sólo hasta que sea correcto
 
 
 int LeerEnteroEnRango(int limiteInferior, int limiteSuperior) {
-    int valor;
+    int eValor;
     while (1) {
-        valor = LeerEntero();  // Usamos la función que ya valida entero
-        if (valor < limiteInferior || valor > limiteSuperior) {
+        eValor = LeerEntero();  
+        if (eValor < limiteInferior || eValor > limiteSuperior) {
             printf("Error: el numero debe estar entre %d y %d.\n", limiteInferior, limiteSuperior);
         } else {
-            return valor;
+            return eValor;
                 }
                }
 }
