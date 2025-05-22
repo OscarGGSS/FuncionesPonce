@@ -27,11 +27,20 @@ void Centrar(char *, int); //14
 void Mensaje(char *, int, int); //15
 void MensajeError(int); //16
 //17
-//18
+int LeerNumero();
+char* ConvertirNumeroCadena(int);
+void MostrarCadena(const char*);
+void Conversion();//18
+
 char* leerCadena(); 
 double convertirCadenaANumero(const char*);
 void mostrarNumero(double);
 void ejecutarConversion();
+
+char* leerCadena();
+double convertirCadenaANumero(const char*);
+void mostrarNumero(double);
+void ejecutarConversion(); //19
 //20
 void Marco(); //21
 //22
@@ -503,14 +512,6 @@ void borrarArea(int x1, int y1, int x2, int y2) {
    Compilador: Dev-C++ 5.11
    Version 1.0
 ********* */
-
-
-// Prototipos 
-int LeerNumero();
-char* ConvertirNumeroCadena(int);
-void MostrarCadena(const char*);
-void Conversion();
-
 
 int LeerNumero() {
     int eNumero;
