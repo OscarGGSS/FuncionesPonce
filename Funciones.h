@@ -37,6 +37,11 @@ char* leerCadena();
 double convertirCadenaANumero(const char*);
 void mostrarNumero(double);
 void ejecutarConversion();
+
+char* leerCadena();
+double convertirCadenaANumero(const char*);
+void mostrarNumero(double);
+void ejecutarConversion(); //19
 //20
 void Marco(); //21
 //22
