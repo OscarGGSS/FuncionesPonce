@@ -1,3 +1,11 @@
+/* *********
+   Programa: F12LeerFechaValida.c
+   Autor: Ricardo
+   Fecha: 20/05/2025
+   Objetivo:
+   Compilador: Dev-C++ 5.11
+   Version 1.0
+********* */
 #include <stdio.h>https://github.com/OscarGGSS/FuncionesPonce/tree/main
 #include <stdlib.h>
 #include <string.h>
