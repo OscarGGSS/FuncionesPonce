@@ -38,7 +38,7 @@ void mostrarNumero(double);
 void ejecutarConversion(); //19
 //20
 void Marco(); //21
-//22
+int GenerarNumeroAleatorio(int); //22 
 
 /* ******
 * F16CodigoDeError
@@ -736,12 +736,12 @@ como parámetro y retorne el número generado sólo hasta que sea correcto .
 * Autor: Soriano Aguilar José Ángel
  ****** */
 
- int GenerarNumeroAleatorio(int limiteSuperior) {
-    int numero;
+ int GenerarNumeroAleatorio(int eLimiteSuperior) {
+    int eNumero;
 
     do {
-        numero = rand() % (limiteSuperior + 1); // entre 0 y limiteSuperior
-    } while (numero != LeerEnteroEnRango(0, limiteSuperior)); // Confirmación del usuario
+        eNumero = rand() % (eLimiteSuperior + 1); // entre 0 y limiteSuperior
+    } while (eNumero != LeerEnteroEnRango(0, eLimiteSuperior)); // Confirmación del usuario
 
-    return numero;
+    return eNumero;
 }
