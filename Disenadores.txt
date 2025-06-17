@@ -1,0 +1,11 @@
+ID: 1
+Nombre: Oscarr
+Telefono: 1
+Calle: Prueba xd
+No. Exterior: xd
+No. Interior: 1
+Colonia: 11
+CP: 1
+Delegacion: 1
+Fecha Nac: 01/11/11111
+
