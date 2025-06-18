@@ -1,0 +1,7 @@
+1|PlayeraOversize|400
+2|PlayeraRegular|200
+3|Taza|100
+4|Case|200
+
+
+

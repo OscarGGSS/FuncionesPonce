@@ -5,28 +5,19 @@
 //Programa Principal
 int main() {
 	
-	TaVentas aVentas = {0}; 
+	TaVentas aVentas = {0};
+	TaClientes aClientes = {0};
     int eTotalVentas = 0;
+    int eTotalClientes = -1;
 	
-    FILE *pArchivoVentas = fopen("ventas.dat", "rb");
-    
-    if (pArchivoVentas != NULL) {
-    	
-        fread(&eTotalVentas, sizeof(int), 1, pArchivoVentas);
-        fread(aVentas, sizeof(TrVenta), eTotalVentas, pArchivoVentas);
-        fclose(pArchivoVentas);
-        
-    } else {
+	CargarClientes(aClientes, &eTotalClientes);
 
-        eTotalVentas = 0;
-    }
+    CargarVentas(aVentas, &eTotalVentas);
 
     AjustarTamanoConsola(120, 30);
 	system("cls");
 
-    MenuVentas(&aVentas, &eTotalVentas);
-
-    pArchivoVentas = fopen("ventas.dat", "wb");
+    MenuVentas(&aVentas, &eTotalVentas, &aClientes, &eTotalClientes);
     
     return 0;
 
