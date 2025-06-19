@@ -97,7 +97,7 @@ void SubMenuVentas(TaVentas *aVentas, int *eTotalVentas) {
                    
 			case 0: break;
 			
-            default: Error(1); //Error (opción no válida)
+            default: Error(1); //Error (opciÃ³n no vÃ¡lida)
                 	 getch();
     
         }
@@ -114,7 +114,7 @@ int CargarVentas(TaVentas aVentas, int *eTotalVentas) {
         fclose(pArchivoVentas);
         return 1; // carga exitosa
     } else {
-        *eTotalVentas = 0; // archivo no existe, arreglo vacío
+        *eTotalVentas = 0; // archivo no existe, arreglo vacÃ­o
         return 0; // no se pudo cargar
     }
 }
@@ -164,7 +164,7 @@ void RegistrarVenta(TaVentas *aVentas, int *eTotalVentas) {
 		
 		if (rVenta.eIdCliente == -1) { //ValidarIdCliente regresa -1 si el usuario ingresa 'x' o 'X'
    
-   			break; //saltarse todo (regresa al menú)
+   			break; //saltarse todo (regresa al menÃº)
 			
 		}
             	
@@ -406,7 +406,7 @@ void ValidarIdArchivo(int *pId, float *pPrecio, char *sArchivo, char *sTipo, int
 
         eValido = 0;
 
-        while (fscanf(archivo, "%d|%[^|]|%f\n", &eIdLeido, sNombre, &fPrecioLeido) == 3) {  //entero | texto hasta ‘|’ | flotante + salto de línea.
+        while (fscanf(archivo, "%d|%[^|]|%f\n", &eIdLeido, sNombre, &fPrecioLeido) == 3) {  //entero | texto hasta Â‘|Â’ | flotante + salto de lÃ­nea.
             
 			if (eIdLeido == *pId) {
                 *pPrecio = fPrecioLeido;
@@ -419,7 +419,7 @@ void ValidarIdArchivo(int *pId, float *pPrecio, char *sArchivo, char *sTipo, int
         fclose(archivo);
 
         if (!eValido) {
-            Error(12);  // Muestra "ID no válido"
+            Error(12);  // Muestra "ID no vÃ¡lido"
             getch();
         }
 
@@ -469,7 +469,7 @@ int ValidarIdCliente() {
             } else {
             	
             	BorrarZona(26, 20, 1, 80);
-                Error(5); //Error (no se encontró)
+                Error(5); //Error (no se encontrÃ³)
                 getch();
                 
             }
@@ -477,7 +477,7 @@ int ValidarIdCliente() {
         } else {
         	
         	BorrarZona(26, 10, 1, 80);
-            Error(4); //Error (El Id no es válido)
+            Error(4); //Error (El Id no es vÃ¡lido)
             getch();
             
         }
@@ -1041,7 +1041,7 @@ void ImprimirVentasPorPlataforma(TaVentas *aVentas, int eTotalVentas, TePlatafor
         rVenta = (*aVentas)[eContador]; //toma la venta donde esta el contador
         rFechaVenta = rVenta.rFechaVenta; //toma su fecha
 
-        if (rVenta.ePlataforma == ePlataforma && rFechaVenta.eMes == eMes && rFechaVenta.eAnio == eAnio) { //mostrar si coincide plataforma,mes y año
+        if (rVenta.ePlataforma == ePlataforma && rFechaVenta.eMes == eMes && rFechaVenta.eAnio == eAnio) { //mostrar si coincide plataforma,mes y aÃ±o
 
             if (eRenglon > 19) { //imprime hasta la linea 19
             	
@@ -1072,7 +1072,7 @@ void ImprimirVentasPorPlataforma(TaVentas *aVentas, int eTotalVentas, TePlatafor
     Mensaje(21, 75, "# Ventas: %d", *eVentas);
     Mensaje(21, 92, "Total: $%.2f", *fTotal);
 
-    if (!eUltimaPlataforma) { //si no es la última plataforma...
+    if (!eUltimaPlataforma) { //si no es la Ãºltima plataforma...
     	
         Centrar("Presione una tecla para continuar...", 26);
         getch();
